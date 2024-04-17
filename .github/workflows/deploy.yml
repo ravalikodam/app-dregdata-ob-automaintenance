@@ -20,4 +20,4 @@ jobs:
         AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
 
     - name: Deploy application
-      run: ./automaintenance/logcleanup/scripts/deploy.sh
+      run: ./automaintenance/logcleanup/scripts/mockregister_logcleanup.sh
