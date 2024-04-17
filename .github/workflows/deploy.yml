@@ -1,4 +1,4 @@
-
+````
 name: Deploy to EC2 Instance
 
 on:
@@ -19,3 +19,4 @@ jobs:
 
     - name: Deploy application
       run: ./scripts/deploy.sh
+````
