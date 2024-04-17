@@ -1,9 +1,9 @@
-name: Deploy to EC2 Instance
+name: Run on EC2 Instance
 
 on:
   push:
     branches:
-      - main
+      - develop
 
 jobs:
   deploy:
@@ -20,4 +20,4 @@ jobs:
         AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
 
     - name: Deploy application
-      run: ./scripts/deploy.sh
+      run: ./automaintenance/logcleanup/scripts/deploy.sh
