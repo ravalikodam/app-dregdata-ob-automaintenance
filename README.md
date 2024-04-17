@@ -9,11 +9,11 @@ This repository is used to version control the automation scripts created for au
 -------------------------
 
 - `automaintenance`: This directory contains folders with Bash scripts specifically designed for log cleanup within the RDS domain.
-- `logcleanup`: This directory is structured with both scripts and inventory folders to facilitate log cleanup tasks.
-  - `scripts`: This directory houses an automated Bash script tailored for log cleanup operations.
-  - `inventory`: This directory further divides into servers and config subdirectories to organize server details and configuration files.
-    - `servers`: Inside this subdirectory, you'll find a file named **env.conf** that holds essential server details required for executing log cleanup tasks.
-    - `config` : Within this subdirectory, there's a file named **vars.conf**. This file contains the necessary variables such as log paths and log file names that are crucial for the log cleanup process.
+  - `logcleanup`: This directory is structured with both scripts and inventory folders to facilitate log cleanup tasks.
+    - `scripts`: This directory houses an automated Bash script tailored for log cleanup operations.
+    - `inventory`: This directory further divides into servers and config subdirectories to organize server details and configuration files.
+      - `servers`: Inside this subdirectory, you'll find a file named **env.conf** that holds essential server details required for executing log cleanup tasks.
+      - `config` : Within this subdirectory, there's a file named **vars.conf**. This file contains the necessary variables such as log paths and log file names that are crucial for the log cleanup process.
   
 **Prerequisites:**
 -------------------
