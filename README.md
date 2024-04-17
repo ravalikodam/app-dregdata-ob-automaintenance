@@ -33,14 +33,14 @@ Before you can clone a GitHub repository, ensure that Git is installed on your m
    ```
 4. Clone the Repository: Copy the following command and paste it into your terminal or command prompt. Press Enter to execute the command: 
    ```bash
-   git clone https://bitbucket.cuscal.com.au/scm/cds/app-dregdata-ob-automaintenance.git
+   git clone https://github.com/ravalikodam/app-dregdata-ob-housekeeping-maintenance.git
    ```
    (i.e., This command instructs Git to clone the repository located at the specified URL).
 
 5. Wait for the Cloning to Complete: Git will download all the files from the repository to your local machine. Wait for the process to complete.
 6. Access the Cloned Repository: Once the cloning is finished, you can navigate into the cloned repository using the following command: 
    ```bash
-   cd app-dregdata-ob-automaintenance
+   cd app-dregdata-ob-housekeeping-maintenance
    ```
 7. Access the script specific to the individual task and make the necessary configuration changes in the config section as per the requirement.
 
