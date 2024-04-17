@@ -1,4 +1,4 @@
-name: Run on EC2 Instance
+name: Run clean-up of mock register logs
 
 on:
   push:
@@ -13,5 +13,5 @@ jobs:
     - name: Checkout code
       uses: actions/checkout@v2
 
-    - name: Deploy application
+    - name: Run clean-up of mock register logs on EC2 instance
       run: ./automaintenance/logcleanup/scripts/mockregister_logcleanup.sh
