@@ -4,6 +4,8 @@ on:
   push:
     branches:
       - develop
+  schedule:
+    - cron: '0 0 1 * *' # This will run the job at 00:00 on the 1st day of every month
 
 jobs:
   deploy:
