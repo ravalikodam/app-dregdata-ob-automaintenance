@@ -1,20 +1,18 @@
-
 #!/bin/bash
-set -evx
 
 # Source variables
-source ./automaintenance/logcleanup/inventory/servers/env.conf
+#source ./automaintenance/logcleanup/inventory/servers/env.conf
 
 # Define variables
-#ROLE_ARN="arn:aws:iam::"$ACCOUNT_ID":role/cuscal-role-obdeveloperuser"
-ROLE_ARN="arn:aws:iam::"$ACCOUNT_ID":role/aws-reserved/sso.amazonaws.com/ap-southeast-2/AWSReservedSSO_cuscal-role-obdeveloperuser_ccaa5e3f1f873f6c"
+#ROLE_ARN="arn:aws:iam::"${ACCOUNT_ID}":role/cuscal-role-obdeveloperuser"
+ROLE_ARN="arn:aws:iam::"${ACCOUNT_ID}":role/aws-reserved/sso.amazonaws.com/ap-southeast-2/AWSReservedSSO_cuscal-role-obdeveloperuser_ccaa5e3f1f873f6c"
 instance_name="$INSTANCE_NAME"
-region="$REGION"
-profile="$PROFILE"  # AWS CLI profile name
+region="ap-southeast-2"
+profile="default"  # AWS CLI profile name
 
 # Assume role to get temporary credentials
 echo "Assuming role $ROLE_ARN..."
-TEMP_CREDENTIALS=$(aws sts assume-role --role-arn $ROLE_ARN --role-session-name "session" --profile $profile)
+TEMP_CREDENTIALS=$(aws sts assume-role --role-arn $ROLE_ARN --role-session-name "session")
 
 # Extracting temporary credentials
 export AWS_ACCESS_KEY_ID=$(echo $TEMP_CREDENTIALS | jq -r '.Credentials.AccessKeyId')
@@ -23,8 +21,8 @@ export AWS_SESSION_TOKEN=$(echo $TEMP_CREDENTIALS | jq -r '.Credentials.SessionT
 
 # Use Session Manager to connect to EC2 instance
 echo "Connecting to EC2 instance using Session Manager..."
-aws ssm start-session --target $instance_name --region $region --profile $profile <<'EOF'
-  #set -evx
+aws ssm start-session --target $instance_name --region $region <<'EOF'
+
   # Commands to execute inside EC2 instance
 
   # List active containers
@@ -69,10 +67,5 @@ aws ssm start-session --target $instance_name --region $region --profile $profil
   #sudo docker container restart "$container_id"
 
 #EOF
-
-# Unset temporary credentials
-#unset AWS_ACCESS_KEY_ID
-#unset AWS_SECRET_ACCESS_KEY
-#unset AWS_SESSION_TOKEN
 
 #echo "Session terminated."
