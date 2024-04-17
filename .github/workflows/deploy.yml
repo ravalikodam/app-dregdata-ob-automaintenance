@@ -1,0 +1,21 @@
+
+name: Deploy to EC2 Instance
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Login to AWS
+      run: ./scripts/login_aws.sh
+
+    - name: Deploy application
+      run: ./scripts/deploy.sh
