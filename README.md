@@ -3,7 +3,7 @@ Auto-Maintenance | RDS Domain
 
 **Getting Started:**
 ---------------------
-This repository is used to version control the automation scripts created for auto-maintenance activity for open banking application within RDS domain. The automation scripts are stored in the feature branch (i.e., ````develop````).
+This repository is used to version control the automation scripts created for auto-maintenance activity within RDS domain. The automation scripts are stored in the feature branch (i.e., ````develop````).
 
 **Repository Structure:**
 -------------------------
