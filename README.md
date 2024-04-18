@@ -8,8 +8,8 @@ This repository is used to version control the automation scripts created for au
 **Repository Structure:**
 -------------------------
 
-- `.github`: This directory contains folders with Bash scripts specifically designed for log cleanup within the RDS domain.
-  - `workflows`: This directory is structured with both scripts and inventory folders to facilitate log cleanup tasks.
+- `.github`: This directory contains a folder named workflows.
+  - `workflows`: Within this directory, there is a yaml script which would be used to run the Github action pipelines.
 - `scripts`: This directory houses an automated Bash script tailored for log cleanup operations.
 - `inventory`: This directory further divides into servers and config subdirectories to organize server details and configuration files.
   - `servers`: Inside this subdirectory, you'll find a file named **env.conf** that holds essential server details required for executing log cleanup tasks.
