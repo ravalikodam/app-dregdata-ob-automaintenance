@@ -1,4 +1,4 @@
-name: Run the cleanup script to EC2 using Session Manager
+name: Run the auto-maintenance script
 
 on:
   push:
